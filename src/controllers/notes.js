@@ -48,7 +48,7 @@ exports.update = async (req, res) => {
             );
             
             if (updateResult) {
-                res.status(200).json(updateResult);
+                return res.status(200).json(updateResult);
             }
         }
 
@@ -69,7 +69,7 @@ exports.delete = async (req, res) => {
             const deletedNote = await Note.findByIdAndDelete(noteId);
 
             if (deletedNote) {
-                res.status(200).json(deletedNote);
+                return res.status(200).json(deletedNote);
             }
         }
 

@@ -27,13 +27,11 @@ const notesSchema = new mongoose.Schema({
     },
     updated_at: {
         type: Date,
-        required: false,
-        default: null
+        required: false
     },
     updated_by: {
         type: String,
-        required: false,
-        default: null
+        required: false
     }
 });
 

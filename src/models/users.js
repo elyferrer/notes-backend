@@ -14,8 +14,7 @@ const userSchema = new mongoose.Schema({
     middle_name: {
         type: String,
         required: false,
-        maxLength: 100,
-        default: null
+        maxLength: 100
     },
     nickname: {
         type: String,

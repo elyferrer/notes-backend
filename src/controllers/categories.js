@@ -3,7 +3,7 @@ const Category = require('../models/categories');
 exports.get = async (req, res) => {
     try {
         const user = req.user;
-        const categories = await Category.find({ created_by: user.id }).sort({ end_date: -1 });
+        const categories = await Category.find({ created_by: user.id });
         
         res.status(200).json(categories);
     } catch (error) {

@@ -1,26 +1,17 @@
 const mongoose = require('mongoose')
 
-const charactersSchema = new mongoose.Schema({
+const vocabulariesSchema = new mongoose.Schema({
     value: {
         type: String,
-        required: true,
-        maxLength: 20
+        required: true
     },
     reading: {
-        type: [String],
-        required: false
-    },
-    on_reading: {
-        type: [String],
-        required: false
-    },
-    kun_reading: {
-        type: [String],
-        required: false
+        type: String,
+        required: true,
     },
     meaning: {
-        type: [String],
-        required: false
+        type: String,
+        required: true,
     },
     note: {
         type: String,
@@ -48,4 +39,4 @@ const charactersSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('NoteCharacters', charactersSchema);
+module.exports = mongoose.model('NoteVocabularies', vocabulariesSchema);

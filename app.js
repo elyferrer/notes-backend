@@ -9,6 +9,7 @@ const userRoutes = require('./src/routes/users');
 const noteRoutes = require('./src/routes/notes');
 const categoryRoutes = require('./src/routes/categories');
 const characterRoutes = require('./src/routes/characters');
+const vocabularyRoutes = require('./src/routes/vocabularies');
 
 const PORT = process.env.PORT;
 const CONN = process.env.MONGO_URI;
@@ -23,6 +24,7 @@ app.use('/users', userRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/notes', noteRoutes);
 app.use('/characters', characterRoutes);
+app.use('/vocabularies', vocabularyRoutes);
 
 mongoose.connect(CONN)
     .then(() => console.log('MongoDB connected'))

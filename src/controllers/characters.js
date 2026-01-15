@@ -3,7 +3,7 @@ const Character = require('../models/characters');
 exports.get = async (req, res) => {
     try {
         const user = req.user;
-        const characters = await Character.find({ created_by: user.id }).sort({ end_date: -1 });
+        const characters = await Character.find({ created_by: user.id });
         
         res.status(200).json(characters);
     } catch (error) {
@@ -57,7 +57,7 @@ exports.update = async (req, res) => {
             );
             
             if (updateResult) {
-                res.status(200).json(updateResult);
+                return res.status(200).json(updateResult);
             }
         }
 
@@ -78,7 +78,7 @@ exports.delete = async (req, res) => {
             const deletedCharacter = await Character.findByIdAndDelete(characterId);
 
             if (deletedCharacter) {
-                res.status(200).json(deletedCharacter);
+                return res.status(200).json(deletedCharacter);
             }
         }
 
