@@ -13,12 +13,17 @@ const vocabularyRoutes = require('./src/routes/vocabularies');
 
 const PORT = process.env.PORT;
 const CONN = process.env.MONGO_URI;
+const F_LINK = process.env.FRONT_END_LINK;
 
 const app = express();
 
-app.use(cookieParser());
 app.use(express.json());
-app.use(cors());
+app.use(cookieParser());
+
+app.use(cors({
+    origin: `http://localhost:5000`,
+    credentials: true,
+}));
 
 app.use('/users', userRoutes);
 app.use('/categories', categoryRoutes);
