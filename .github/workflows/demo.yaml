@@ -5,5 +5,7 @@ on:
   types: [opened]
   branches:
    - 'NOTES-/**'
+
+jobs:
   steps:
    - run: echo 'A pull request from notes was created!'
