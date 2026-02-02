@@ -1,0 +1,9 @@
+name: Demo workflows
+
+on:
+ pull_request: 
+  types: [opened]
+  branches:
+   - 'NOTES-/**'
+  steps:
+   - run: echo 'A pull request from notes was created!'
