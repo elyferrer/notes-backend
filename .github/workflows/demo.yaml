@@ -1,13 +1,9 @@
-name: Demo workflows
-
-on:
-  pull_request: 
-    types: [opened]
-    branches:
-      - 'NOTES-/**'
+name: First Workflow
+on: [push]
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Created a pull request
-      run: echo 'A pull request from notes was created!'
+  explore-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a greeting
+        run: echo "Hello, world! This job is running on ${{ runner.os }}."
