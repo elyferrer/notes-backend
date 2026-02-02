@@ -1,14 +1,11 @@
-name: First Workflow
+name: Pull request workflow
 on: 
   pull_request:
-    types:
-      - opened
-    branches:
-      - 'NOTES-/**'
+    types: [opened]
 
 jobs:
   explore-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Print a greeting
-        run: echo "Hello, world! This job is running on ${{ runner.os }}."
+      - name: Pull request creation
+        run: echo "A pull request was created"
