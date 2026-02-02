@@ -7,5 +7,7 @@ on:
    - 'NOTES-/**'
 
 jobs:
+  runs-on: ubuntu-latest
   steps:
+   - name: Created a pull request
    - run: echo 'A pull request from notes was created!'
