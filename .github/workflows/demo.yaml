@@ -1,13 +1,13 @@
 name: Demo workflows
 
 on:
- pull_request: 
-  types: [opened]
-  branches:
-   - 'NOTES-/**'
+  pull_request: 
+    types: [opened]
+    branches:
+      - 'NOTES-/**'
 
 jobs:
   runs-on: ubuntu-latest
   steps:
-   - name: Created a pull request
-   - run: echo 'A pull request from notes was created!'
+    - name: Created a pull request
+      run: echo 'A pull request from notes was created!'
