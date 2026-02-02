@@ -1,0 +1,14 @@
+name: Pull request workflow
+on: 
+  pull_request:
+    types: [closed]
+
+jobs:
+  pull-request-merged-job:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull request merged
+        env: 
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: echo "The pull request $PR_TITLE was merged"

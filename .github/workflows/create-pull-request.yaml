@@ -4,7 +4,7 @@ on:
     types: [opened]
 
 jobs:
-  explore-github-actions:
+  pull-request-create-job:
     runs-on: ubuntu-latest
     steps:
       - name: Pull request creation
