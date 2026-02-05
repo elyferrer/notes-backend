@@ -11,6 +11,30 @@ exports.get = async (req, res) => {
     }
 };
 
+exports.getByCategory = async (req, res) => {
+    try {
+        const user = req.user;
+        const categoryId = req.params.id;
+        const characters = await Character.find({ created_by: user.id, category_id: categoryId });
+        res.status(200).json(characters);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+};
+
+exports.getDetails = async (req, res) => {
+    try {
+        const user = req.user;
+        const id = req.params.id;
+        
+        const character = await Character.findOne({ _id: id, created_by: user.id });
+        
+        res.status(200).json(character);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+};
+
 exports.create = async (req, res) => {
     const { 
         value, 

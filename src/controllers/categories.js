@@ -9,7 +9,18 @@ exports.get = async (req, res) => {
     } catch (error) {
         res.status(500).json(error);
     }
-    
+};
+
+exports.getDetails = async (req, res) => {
+    try {
+        const user = req.user;
+        const id = req.params.id;
+        const category = await Category.findOne({ created_by: user.id, _id: id });
+        
+        res.status(200).json(category);
+    } catch (error) {
+        res.status(500).json(error);
+    }
 };
 
 exports.create = async (req, res) => {

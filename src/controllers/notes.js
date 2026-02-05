@@ -15,12 +15,7 @@ exports.getByCategory = async (req, res) => {
     try {
         const user = req.user;
         const categoryId = req.params.id;
-
-        const notes = await Note.find({ 
-            created_by: user.id, 
-            category_id: categoryId 
-        }).sort({ end_date: -1 });
-        
+        const notes = await Note.find({ created_by: user.id, category_id: categoryId });
         res.status(200).json(notes);
     } catch (error) {
         res.status(500).json(error);
